@@ -30,7 +30,9 @@ access_secret="g0Dgs8pn1PCg1J6nHtWIHyDftAtt0kJgWqpVPBAdw4rLp"
 twitter = Twitter( auth = OAuth(access_key, access_secret, consumer_key, consumer_secret))
 
 # Get a particular friend's timeline and a random number
-number = random.randint(1, 15)
+randomnumbersampler = random.sample(range(1, 15), 2)
+number =int(randomnumbersampler[0])
+number1 =int(randomnumbersampler[1])
 i= 0
 kanye = twitter.statuses.user_timeline(screen_name = "kanyewest", count = 5)
 for status in kanye:
@@ -55,5 +57,40 @@ else:
 
 results = twitter.statuses.update(status = post)
 
+print post
+
+consumer_key1="yhGktobKX2EgXedSEd1ojDPu9"
+consumer_secret1="k3E2k8PI6NWRlTYZZZ4tAKhxINWlm0xifZqjYMU8EeHqNBwja7"
+access_key1="740247120020529152-RhFDIHTUccaEOfjS86b6FHPjkciN6FG"
+access_secret1="U2w95M7BAzxRV4GX16BB3syyO5Jq9PmnKdTqib7FX4TEQ"
+
+#-----------------------------------------------------------------------
+# create twitter API object
+#-----------------------------------------------------------------------
+twitter = Twitter( auth = OAuth(access_key1, access_secret1, consumer_key1, consumer_secret1))
+
+i= 0
+kanye = twitter.statuses.user_timeline(screen_name = "kanyewest", count = 5)
+for status in kanye:
+	i= i +1	
+	if i == number1:
+		quote= "%s" % (status["text"].encode("ascii", "ignore"))
+trump = twitter.statuses.user_timeline(screen_name = "realDonaldTrump", count = 5)
+for status in trump:
+	i= i + 1
+	if i == number1:	
+		quote= "%s" % (status["text"].encode("ascii", "ignore"))		
+hoppus = twitter.statuses.user_timeline(screen_name = "markhoppus", count = 5)
+for status in hoppus:
+	i = i +1
+	if i == number1:
+		quote= "%s" % (status["text"].encode("ascii", "ignore"))
+if len(quote) <= 131:
+	post= quote + " #FBB2016"
+else:
+	post= quote
+
+results = twitter.statuses.update(status = post)
+#print results
 print post
 exit()
