@@ -15,14 +15,14 @@ import random
 
 # The consumer keys can be found on your application's Details
 # page located at https://dev.twitter.com/apps (under "OAuth settings")
-consumer_key="jwin7Xc3SVaPqSZJ3PusrZc9n"
-consumer_secret="4Cx4nsvGcL0KBi9XMFeqhl19f5YQwDSudZSOFP77zx86TqTJH1"
+consumer_key=
+consumer_secret=
 
 # The access tokens can be found on your applications's Details
 # page located at https://dev.twitter.com/apps (located
 # under "Your access token")
-access_key="740221558182973440-Jh0cIOKxMSCBDwlIpWZMzwTOazIkB6b"
-access_secret="g0Dgs8pn1PCg1J6nHtWIHyDftAtt0kJgWqpVPBAdw4rLp"
+access_key=
+access_secret=
 
 #-----------------------------------------------------------------------
 # create twitter API object
